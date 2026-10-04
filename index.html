@@ -3,33 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latsamy Xayavong</title>
+
+    <title>Latsamy Xayavong | Nuclear Theory</title>
 
     <style>
+
+        /* ---------- General ---------- */
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 850px;
-            margin: 50px auto;
-            padding: 0 25px;
-            line-height: 1.6;
-            color: #333;
-        }
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
 
-        h1 {
-            color: #163a5f;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            color: #163a5f;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            margin-top: 35px;
-        }
-
-        .subtitle {
-            color: #666;
-            font-size: 1.1em;
+            color: #263238;
+            background: #f4f7fb;
+            line-height: 1.7;
         }
 
         a {
@@ -38,63 +31,579 @@
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #0d47a1;
         }
+
+        /* ---------- Navigation ---------- */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(12, 35, 58, 0.96);
+            backdrop-filter: blur(8px);
+
+            padding: 15px 30px;
+        }
+
+        .nav-container {
+            max-width: 1050px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            color: white;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .nav-links a {
+            color: #dce8f2;
+            margin-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* ---------- Hero ---------- */
+
+        .hero {
+            background:
+                linear-gradient(135deg,
+                #0c233a 0%,
+                #163f63 55%,
+                #1f5d85 100%);
+
+            color: white;
+
+            padding: 90px 25px 85px;
+        }
+
+        .hero-container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            margin: 0 0 15px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.35rem;
+            color: #dcebf7;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 1.08rem;
+            color: #e8f1f7;
+        }
+
+        .hero-links {
+            margin-top: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 25px;
+
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .hero-button:hover {
+            background: rgba(255,255,255,0.12);
+            color: white;
+        }
+
+        /* ---------- Main ---------- */
+
+        main {
+            max-width: 1050px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            color: #123b5d;
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            color: #607080;
+            margin-bottom: 35px;
+        }
+
+        /* ---------- Research Cards ---------- */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .research-card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+
+            border: 1px solid #e1e8ef;
+
+            box-shadow: 0 5px 20px rgba(20,50,80,0.05);
+
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(20,50,80,0.10);
+        }
+
+        .research-card h3 {
+            color: #164e73;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .research-card p {
+            color: #596875;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- Publications ---------- */
+
+        .publication {
+            background: white;
+            border-left: 4px solid #2b78a0;
+
+            padding: 20px 25px;
+            margin-bottom: 18px;
+
+            border-radius: 0 10px 10px 0;
+
+            box-shadow: 0 3px 12px rgba(20,50,80,0.04);
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #173f5f;
+        }
+
+        .publication-details {
+            color: #687783;
+            font-size: 0.93rem;
+            margin-top: 5px;
+        }
+
+        /* ---------- Activities ---------- */
+
+        .activity {
+            display: flex;
+            gap: 25px;
+
+            padding: 18px 0;
+            border-bottom: 1px solid #dde5ec;
+        }
+
+        .activity-year {
+            min-width: 70px;
+            font-weight: 600;
+            color: #246b91;
+        }
+
+        /* ---------- Contact ---------- */
+
+        .contact-box {
+            background: #e8f1f7;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        /* ---------- Footer ---------- */
+
+        footer {
+            background: #0c233a;
+            color: #b9c9d6;
+            text-align: center;
+
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* ---------- Mobile ---------- */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links a {
+                margin: 0 8px;
+            }
+
+            .hero {
+                padding: 65px 25px;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .activity {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <h1>Latsamy Xayavong</h1>
 
-    <p class="subtitle">
-        Postdoctoral Researcher<br>
-        Department of Physics, Yonsei University
-    </p>
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <div class="nav-name">
+            Latsamy Xayavong
+        </div>
+
+        <div class="nav-links">
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#activities">Activities</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-container">
+
+        <h1>Latsamy Xayavong</h1>
+
+        <div class="subtitle">
+            Nuclear Theory · Nuclear Structure · Isospin Symmetry
+        </div>
+
+        <p>
+            Postdoctoral Researcher at the Department of Physics,
+            Yonsei University.
+        </p>
+
+        <p>
+            My research focuses on nuclear structure and
+            isospin-symmetry breaking, with applications to
+            precision studies of nuclear beta decay and tests
+            of the Standard Model.
+        </p>
+
+        <div class="hero-links">
+
+            <a class="hero-button"
+               href="#research">
+                Research
+            </a>
+
+            <a class="hero-button"
+               href="#publications">
+                Publications
+            </a>
+
+            <a class="hero-button"
+               href="mailto:xayavong.latsamy@yonsei.ac.kr">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main>
+
+
+<!-- ---------- Research ---------- -->
+
+<section id="research">
 
     <h2>Research</h2>
 
-    <p>
-        My research focuses on nuclear structure and isospin-symmetry
-        breaking, with applications to precision tests of the Standard Model.
+    <p class="section-intro">
+        I study the structure of atomic nuclei and the role of
+        isospin symmetry and its breaking in nuclear systems.
+        My work connects microscopic nuclear-structure calculations
+        with precision tests of fundamental physics.
     </p>
 
-    <ul>
-        <li>Isospin-symmetry breaking</li>
-        <li>Superallowed beta decay</li>
-        <li>Nuclear structure</li>
-        <li>Shell model and ab initio methods</li>
-        <li>Nuclear density functional theory</li>
-    </ul>
 
-    <h2>Publications</h2>
+    <div class="research-grid">
 
-    <p>
-        A list of my publications will be added here.
+
+        <div class="research-card">
+
+            <h3>Isospin Symmetry</h3>
+
+            <p>
+                Isospin-symmetry breaking, mirror asymmetries,
+                isospin mixing, and charge-dependent nuclear
+                interactions.
+            </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+            <h3>Superallowed β Decay</h3>
+
+            <p>
+                Isospin-symmetry-breaking corrections to
+                superallowed Fermi transitions and their
+                connection to precision tests of the weak interaction.
+            </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+            <h3>Nuclear Structure</h3>
+
+            <p>
+                Shell-model, ab initio, and nuclear density
+                functional approaches to understanding the
+                structure of atomic nuclei.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ---------- Current Research ---------- -->
+
+<section>
+
+    <h2>Current Research</h2>
+
+    <p class="section-intro">
+        Some of my current research topics include:
     </p>
 
-    <h2>Talks and Activities</h2>
 
-    <p>
-        A list of selected talks, conferences, and other activities
-        will be added here.
+    <div class="publication">
+
+        <div class="publication-title">
+            Isospin-symmetry breaking in superallowed β decay
+        </div>
+
+        <div class="publication-details">
+            Nuclear-structure corrections and their impact on
+            precision determination of fundamental weak-interaction
+            parameters.
+        </div>
+
+    </div>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+            Mirror asymmetry of isospin-symmetry-breaking corrections
+        </div>
+
+        <div class="publication-details">
+            Understanding the microscopic origin of mirror asymmetries
+            in superallowed Fermi transitions.
+        </div>
+
+    </div>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+            E0 transitions and isospin mixing
+        </div>
+
+        <div class="publication-details">
+            Exploring correlations between E0 transition strengths
+            and isospin-symmetry-breaking corrections.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ---------- Publications ---------- -->
+
+<section id="publications">
+
+    <h2>Selected Publications</h2>
+
+    <p class="section-intro">
+        Selected publications related to my research in nuclear
+        structure and isospin-symmetry breaking.
     </p>
 
-    <h2>CV</h2>
+
+    <div class="publication">
+
+        <div class="publication-title">
+            Publication title
+        </div>
+
+        <div class="publication-details">
+            L. Xayavong et al. · Physical Review C
+            · <a href="#">Paper</a>
+            · <a href="#">arXiv</a>
+        </div>
+
+    </div>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+            More publications will be added here
+        </div>
+
+        <div class="publication-details">
+            A complete publication list can be added later.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ---------- Activities ---------- -->
+
+<section id="activities">
+
+    <h2>Talks & Activities</h2>
+
+    <div class="activity">
+
+        <div class="activity-year">
+            2026
+        </div>
+
+        <div>
+            Colloque GANIL
+        </div>
+
+    </div>
+
+
+    <div class="activity">
+
+        <div class="activity-year">
+            2026
+        </div>
+
+        <div>
+            Selected conferences, seminars, and workshops
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ---------- CV ---------- -->
+
+<section>
+
+    <h2>Curriculum Vitae</h2>
 
     <p>
-        <a href="#">Download my CV</a>
+        For a complete list of my academic experience and
+        publications, please see my
+        <a href="#">CV</a>.
     </p>
+
+</section>
+
+
+<!-- ---------- Contact ---------- -->
+
+<section id="contact">
 
     <h2>Contact</h2>
 
-    <p>
-        Department of Physics, Yonsei University<br>
-        Seoul, Republic of Korea<br>
-        <a href="mailto:xayavong.latsamy@yonsei.ac.kr">
-            xayavong.latsamy@yonsei.ac.kr
-        </a>
-    </p>
+    <div class="contact-box">
+
+        <strong>Latsamy Xayavong</strong><br>
+        Department of Physics<br>
+        Yonsei University<br>
+        Seoul, Republic of Korea
+
+        <p>
+            <a href="mailto:xayavong.latsamy@yonsei.ac.kr">
+                xayavong.latsamy@yonsei.ac.kr
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 Latsamy Xayavong · Yonsei University
+
+</footer>
+
 
 </body>
 </html>
